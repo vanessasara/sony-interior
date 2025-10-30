@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Sen } from 'next/font/google';
+// import { Sen } from 'next/font/google';
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChatWidget from "@/components/ChatWidget";
 
-const josef = Sen(
-  {
-    subsets:['latin'],
-    weight:['400','500','600','700'],
-    display:'swap'
-  }
-);
+// const josef = Sen(
+//   {
+//     subsets:['latin'],
+//     weight:['400','500','600','700'],
+//     display:'swap'
+//   }
+// );
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -22,11 +23,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // className={josef.className}
   return (
     <html lang="en">
-      <body className={josef.className}>
+      <body >
         <Navbar />
         {children}
+        <ChatWidget/>
         <Footer/>
       </body>
     </html>
